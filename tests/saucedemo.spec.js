@@ -11,6 +11,5 @@ test('Login test on SauceDemo', async ({ page }) => {
   await page.click('#add-to-cart');
   await page.click('#shopping_cart_container');
   await expect(page).toHaveURL('https://www.saucedemo.com/cart.html');
-
-
+  await expect(page.locator('.inventory_item_name[data-test="inventory-item-name"]')).toHaveText('Sauce Labs Backpack');
 });
